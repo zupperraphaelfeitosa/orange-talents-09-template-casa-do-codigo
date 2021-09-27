@@ -1,7 +1,5 @@
 package br.com.zup.raphaelfeitosa.casadocodigo.models;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import javax.persistence.*;
 import java.time.LocalDateTime;
 

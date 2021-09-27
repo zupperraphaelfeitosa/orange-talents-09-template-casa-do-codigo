@@ -5,10 +5,8 @@ import br.com.zup.raphaelfeitosa.casadocodigo.models.AutorModel;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
-import java.io.Serializable;
 
-public class AutorRequest implements Serializable {
-    private static final long serialVersionUID = 1L;
+public class AutorRequest {
 
     @NotBlank
     private String nome;

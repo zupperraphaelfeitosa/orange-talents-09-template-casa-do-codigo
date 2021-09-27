@@ -20,7 +20,7 @@ public class AutorController {
     @PostMapping
     @Transactional
     @ResponseStatus(HttpStatus.OK)
-    public void cadastrarAutor(@RequestBody @Valid AutorRequest autorRequest){
+    public void cadastrarAutor(@RequestBody @Valid AutorRequest autorRequest) {
 
         AutorModel novoAutor = autorRequest.toAutorModel();
         autorRepository.save(novoAutor);
