@@ -1,6 +1,7 @@
 package br.com.zup.raphaelfeitosa.casadocodigo.controllers.dto.request;
 
 import br.com.zup.raphaelfeitosa.casadocodigo.models.AutorModel;
+import br.com.zup.raphaelfeitosa.casadocodigo.validation.validators.EmailUnico;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -13,6 +14,7 @@ public class AutorRequest {
 
     @NotBlank
     @Email
+    @EmailUnico
     private String email;
 
     @NotBlank
