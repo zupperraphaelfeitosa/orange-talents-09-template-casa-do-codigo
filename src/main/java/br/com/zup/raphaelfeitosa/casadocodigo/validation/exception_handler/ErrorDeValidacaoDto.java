@@ -1,4 +1,4 @@
-package br.com.zup.raphaelfeitosa.casadocodigo.validation;
+package br.com.zup.raphaelfeitosa.casadocodigo.validation.exception_handler;
 
 public class ErrorDeValidacaoDto {
 

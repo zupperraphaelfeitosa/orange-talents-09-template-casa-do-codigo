@@ -1,4 +1,4 @@
-package br.com.zup.raphaelfeitosa.casadocodigo.controller;
+package br.com.zup.raphaelfeitosa.casadocodigo.Autor;
 
 
 import org.junit.jupiter.api.*;

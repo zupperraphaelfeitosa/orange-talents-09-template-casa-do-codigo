@@ -1,7 +1,6 @@
-package br.com.zup.raphaelfeitosa.casadocodigo.controllers.dto.request;
+package br.com.zup.raphaelfeitosa.casadocodigo.Autor;
 
-import br.com.zup.raphaelfeitosa.casadocodigo.models.AutorModel;
-import br.com.zup.raphaelfeitosa.casadocodigo.validation.validators.EmailUnico;
+import br.com.zup.raphaelfeitosa.casadocodigo.validation.annotations.EmailUnico;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;

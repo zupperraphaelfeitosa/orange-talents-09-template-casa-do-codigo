@@ -1,6 +1,6 @@
-package br.com.zup.raphaelfeitosa.casadocodigo.validation.validators;
+package br.com.zup.raphaelfeitosa.casadocodigo.validation.annotations;
 
-import br.com.zup.raphaelfeitosa.casadocodigo.repositories.AutorRepository;
+import br.com.zup.raphaelfeitosa.casadocodigo.Autor.AutorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.validation.ConstraintValidator;

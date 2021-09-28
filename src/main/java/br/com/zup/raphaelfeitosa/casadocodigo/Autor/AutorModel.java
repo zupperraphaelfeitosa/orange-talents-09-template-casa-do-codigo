@@ -1,4 +1,4 @@
-package br.com.zup.raphaelfeitosa.casadocodigo.models;
+package br.com.zup.raphaelfeitosa.casadocodigo.Autor;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;

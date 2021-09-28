@@ -1,5 +1,4 @@
-package br.com.zup.raphaelfeitosa.casadocodigo.validation.validators;
-
+package br.com.zup.raphaelfeitosa.casadocodigo.validation.annotations;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;

@@ -1,6 +1,5 @@
-package br.com.zup.raphaelfeitosa.casadocodigo.repositories;
+package br.com.zup.raphaelfeitosa.casadocodigo.Autor;
 
-import br.com.zup.raphaelfeitosa.casadocodigo.models.AutorModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

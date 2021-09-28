@@ -1,8 +1,5 @@
-package br.com.zup.raphaelfeitosa.casadocodigo.controllers;
+package br.com.zup.raphaelfeitosa.casadocodigo.Autor;
 
-import br.com.zup.raphaelfeitosa.casadocodigo.controllers.dto.request.AutorRequest;
-import br.com.zup.raphaelfeitosa.casadocodigo.models.AutorModel;
-import br.com.zup.raphaelfeitosa.casadocodigo.repositories.AutorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
