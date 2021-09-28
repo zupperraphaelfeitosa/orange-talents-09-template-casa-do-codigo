@@ -1,6 +1,6 @@
 package br.com.zup.raphaelfeitosa.casadocodigo.Categoria;
 
-import br.com.zup.raphaelfeitosa.casadocodigo.validation.annotations.CategoriaUnica;
+import br.com.zup.raphaelfeitosa.casadocodigo.validation.annotations.CampoUnicoGenerico;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.validation.constraints.NotBlank;
@@ -8,7 +8,10 @@ import javax.validation.constraints.NotBlank;
 public class CategoriaRequest {
 
     @NotBlank
-    @CategoriaUnica
+    @CampoUnicoGenerico(
+            nomeCampo = "nome",
+            classeDominio = CategoriaModel.class,
+            message = "Categoria já cadastrada no sistema!")
     private String nome;
 
     public CategoriaRequest(@JsonProperty("nome") String nome) {

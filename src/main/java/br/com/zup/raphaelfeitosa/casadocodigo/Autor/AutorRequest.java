@@ -1,6 +1,6 @@
 package br.com.zup.raphaelfeitosa.casadocodigo.Autor;
 
-import br.com.zup.raphaelfeitosa.casadocodigo.validation.annotations.EmailUnico;
+import br.com.zup.raphaelfeitosa.casadocodigo.validation.annotations.CampoUnicoGenerico;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -13,7 +13,10 @@ public class AutorRequest {
 
     @NotBlank
     @Email
-    @EmailUnico
+    @CampoUnicoGenerico(
+            nomeCampo = "email",
+            classeDominio = AutorModel.class,
+            message = "Autor ja cadastrado no sistema!")
     private String email;
 
     @NotBlank
