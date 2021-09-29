@@ -1,6 +1,8 @@
-package br.com.zup.raphaelfeitosa.casadocodigo.Autor;
+package br.com.zup.raphaelfeitosa.casadocodigo.Livros;
 
 
+import br.com.zup.raphaelfeitosa.casadocodigo.Autor.AutorModel;
+import br.com.zup.raphaelfeitosa.casadocodigo.Autor.AutorRepository;
 import br.com.zup.raphaelfeitosa.casadocodigo.Categoria.CategoriaModel;
 import br.com.zup.raphaelfeitosa.casadocodigo.Categoria.CategoriaRepository;
 import org.junit.jupiter.api.*;
@@ -10,6 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
@@ -109,5 +112,22 @@ public class LivroControllerTest {
                 .andExpect(MockMvcResultMatchers
                         .status()
                         .is(400));
+    }
+
+    @Test
+    @Order(4)
+    @DisplayName("200 ok  - Listar todos os livros")
+    void listarTodosOsLivrosComSucessoRetorno200() throws Exception {
+
+       MvcResult result =  mockMvc.perform(MockMvcRequestBuilders
+                        .get(uri)
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(MockMvcResultMatchers
+                        .status()
+                        .is(200))
+                .andReturn();
+
+       String resultContent = result.getResponse().getContentAsString();
+        System.out.println(resultContent);
     }
 }
