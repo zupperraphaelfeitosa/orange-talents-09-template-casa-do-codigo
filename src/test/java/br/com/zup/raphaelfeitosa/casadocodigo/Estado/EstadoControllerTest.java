@@ -30,8 +30,8 @@ public class EstadoControllerTest {
 
     @Test
     @Order(1)
-    @DisplayName("200 OK - Cadastro de livro")
-    void cadastroDeLivroComSucessoRetorno200() throws Exception {
+    @DisplayName("200 OK - Cadastro de estado")
+    void cadastroDeEstadoComSucessoRetorno200() throws Exception {
         PaisModel pais = new PaisModel("Brazil");
         paisRepository.save(pais);
 
@@ -51,8 +51,10 @@ public class EstadoControllerTest {
 
     @Test
     @Order(2)
-    @DisplayName("400 Bad Request  - Cadastro de estado com pais inexistente")
-    void cadastroDeEstadoComPaisInexistente() throws Exception {
+    @DisplayName("200 OK - Cadastro de Estado em outro país")
+    void cadastroDeEstadoEmOutroPaisComSucessoRetorno200() throws Exception {
+        PaisModel pais = new PaisModel("Argentina");
+        paisRepository.save(pais);
 
         String novoEstado = "{ \n" +
                 "\"nome\":\"Pará\",\n" +
@@ -65,13 +67,32 @@ public class EstadoControllerTest {
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers
                         .status()
-                        .is(400));
+                        .is(200));
     }
 
     @Test
     @Order(3)
-    @DisplayName("400 Bad Request  - Erro estado ja existente")
-    void cadastroDeEstadoExistenteRetorno400() throws Exception {
+    @DisplayName("400 Bad Request  - Cadastro de estado com pais inexistente")
+    void cadastroDeEstadoComPaisInexistente() throws Exception {
+
+        String novoEstado = "{ \n" +
+                "\"nome\":\"Pará\",\n" +
+                "\"idPais\":3\n" +
+                "}";
+
+        mockMvc.perform(MockMvcRequestBuilders
+                        .post(uri)
+                        .content(novoEstado)
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(MockMvcResultMatchers
+                        .status()
+                        .is(400));
+    }
+
+    @Test
+    @Order(4)
+    @DisplayName("400 Bad Request  - Erro estado ja existente no mesmo País")
+    void cadastroDeEstadoExistenteNoMesmoPaisRetorno400() throws Exception {
 
         String novoEstado = "{ \n" +
                 "\"nome\":\"Pará\",\n" +
