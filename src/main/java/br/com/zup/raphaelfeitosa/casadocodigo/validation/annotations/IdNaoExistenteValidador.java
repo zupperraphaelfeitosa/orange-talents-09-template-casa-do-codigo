@@ -20,6 +20,8 @@ public class IdNaoExistenteValidador implements ConstraintValidator<IdNaoExisten
 
     @Override
     public boolean isValid(Long id, ConstraintValidatorContext constraintValidatorContext) {
+
+        if (id == null) return true;
         Query query = entityManager.createQuery("SELECT c FROM " + classe + " c WHERE c.id  = :ID");
         query.setParameter("ID", id);
         return !query.getResultList().isEmpty();
