@@ -116,7 +116,7 @@ public class LivroControllerTest {
 
     @Test
     @Order(4)
-    @DisplayName("200 ok  - Listar todos os livros")
+    @DisplayName("200 OK  - Listar todos os livros")
     void listarTodosOsLivrosComSucessoRetorno200() throws Exception {
 
        MvcResult result =  mockMvc.perform(MockMvcRequestBuilders
@@ -128,6 +128,23 @@ public class LivroControllerTest {
                 .andReturn();
 
        String resultContent = result.getResponse().getContentAsString();
+        System.out.println(resultContent);
+    }
+
+    @Test
+    @Order(5)
+    @DisplayName("200 OK  - Listar um livro por Id")
+    void listarUmLivroComSucessoRetorno200() throws Exception {
+
+        MvcResult result =  mockMvc.perform(MockMvcRequestBuilders
+                        .get(uri+"/1")
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(MockMvcResultMatchers
+                        .status()
+                        .is(200))
+                .andReturn();
+
+        String resultContent = result.getResponse().getContentAsString();
         System.out.println(resultContent);
     }
 }

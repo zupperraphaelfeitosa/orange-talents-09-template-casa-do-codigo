@@ -69,4 +69,32 @@ public class LivroModel {
     public String getTitulo() {
         return titulo;
     }
+
+    public String getResumo() {
+        return resumo;
+    }
+
+    public String getSumario() {
+        return sumario;
+    }
+
+    public BigDecimal getPreco() {
+        return preco;
+    }
+
+    public Integer getNumeroDePaginas() {
+        return numeroDePaginas;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public LocalDate getDataPublicacao() {
+        return dataPublicacao;
+    }
+
+    public AutorModel getAutor() {
+        return autor;
+    }
 }
