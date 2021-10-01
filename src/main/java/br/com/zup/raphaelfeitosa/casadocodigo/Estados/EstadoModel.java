@@ -26,4 +26,12 @@ public class EstadoModel {
         this.nome = nome;
         this.pais = pais;
     }
+
+//    public PaisModel getPais() {
+//        return pais;
+//    }
+
+    public boolean pertenceAPais(PaisModel pais) {
+        return this.pais.equals(pais);
+    }
 }

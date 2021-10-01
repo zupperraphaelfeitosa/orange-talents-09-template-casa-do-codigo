@@ -6,6 +6,7 @@ import br.com.zup.raphaelfeitosa.casadocodigo.Pais.PaisModel;
 import br.com.zup.raphaelfeitosa.casadocodigo.Pais.PaisRepository;
 import br.com.zup.raphaelfeitosa.casadocodigo.validation.annotations.CPFouCNPJ;
 import br.com.zup.raphaelfeitosa.casadocodigo.validation.annotations.CampoUnicoGenerico;
+import br.com.zup.raphaelfeitosa.casadocodigo.validation.annotations.EstadoPertencenteAPais;
 import br.com.zup.raphaelfeitosa.casadocodigo.validation.annotations.IdNaoExistente;
 
 import javax.validation.constraints.Email;
@@ -13,6 +14,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.util.Optional;
 
+@EstadoPertencenteAPais(classeDominio = ClienteRequest.class)
 public class ClienteRequest {
 
     @NotBlank
@@ -83,6 +85,14 @@ public class ClienteRequest {
         this.cep = cep;
         this.idPais = idPais;
         this.idEstado = idEstado;
+    }
+
+    public Long getIdPais() {
+        return idPais;
+    }
+
+    public Long getIdEstado() {
+        return idEstado;
     }
 
     public ClienteModel toClienteModel(PaisRepository paisRepository, EstadoRepository estadoRepository) {
